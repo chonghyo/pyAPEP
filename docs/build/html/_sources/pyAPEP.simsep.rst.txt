@@ -1,0 +1,21 @@
+pyAPEP.simsep package
+=====================
+
+Submodules
+----------
+
+pyAPEP.simsep.simsep module
+---------------------------
+
+.. automodule:: pyAPEP.simsep.simsep
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pyAPEP.simsep
+   :members:
+   :undoc-members:
+   :show-inheritance:

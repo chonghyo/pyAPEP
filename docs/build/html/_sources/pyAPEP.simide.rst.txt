@@ -1,0 +1,21 @@
+pyAPEP.simide package
+=====================
+
+Submodules
+----------
+
+pyAPEP.simide.simide module
+---------------------------
+
+.. automodule:: pyAPEP.simide.simide
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pyAPEP.simide
+   :members:
+   :undoc-members:
+   :show-inheritance:

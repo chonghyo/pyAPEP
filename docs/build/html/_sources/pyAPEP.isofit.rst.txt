@@ -1,0 +1,21 @@
+pyAPEP.isofit package
+=====================
+
+Submodules
+----------
+
+pyAPEP.isofit.isofit module
+---------------------------
+
+.. automodule:: pyAPEP.isofit.isofit
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pyAPEP.isofit
+   :members:
+   :undoc-members:
+   :show-inheritance:
