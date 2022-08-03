@@ -6,14 +6,13 @@
 # %% Import packages
 #from numpy.lib.function_base import _parse_input_dimensions
 
-  
-import numpy as np
-from scipy.integrate import odeint
-import matplotlib.pyplot as plt
-import time
-from scipy.interpolate import interp1d
-from scipy.integrate import solve_ivp
-   
+#import numpy as np
+#from scipy.integrate import odeint
+#import matplotlib.pyplot as plt
+#import time
+#from scipy.interpolate import interp1d
+#from scipy.integrate import solve_ivp
+
 
 # %% Global varaiebls
 R_gas = 8.3145      # 8.3145 J/mol/K
