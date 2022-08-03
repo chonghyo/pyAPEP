@@ -1,9 +1,6 @@
 pyAPEP package
 ==============
 
-Submodules
-----------
-
 pyAPEP.isofit module
 --------------------
 
@@ -20,7 +17,7 @@ pyAPEP.simide module
    :undoc-members:
    :show-inheritance:
 
-pyAPEP.simsep module
+Real PSA simulation module (:py:mod:`pyAPEP.simsep`)
 --------------------
 
 .. automodule:: pyAPEP.simsep
