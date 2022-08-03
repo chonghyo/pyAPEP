@@ -1,6 +1,6 @@
 """
 ====================================
- :mod:`pyAPEP.isofit` 
+Isotherm fitting module (:py:mod:`pyAPEP.isofit`)
 ====================================
 .. moduleauthor:: jjh <hyo156@kitech.re.kr>
 .. note:: 따라하세요
