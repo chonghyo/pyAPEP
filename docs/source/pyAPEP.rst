@@ -1,9 +1,6 @@
 pyAPEP package
 ==============
 
-pyAPEP.isofit module
---------------------
-
 .. automodule:: pyAPEP.isofit
    :members:
    :undoc-members:
@@ -19,6 +16,22 @@ pyAPEP.simide module
 
 Real PSA simulation module (:py:mod:`pyAPEP.simsep`)
 --------------------
+pyAPEP.isofit module
+--------------------
+Theory
+--------------------
+Theory Theory Theory Theory Theory Theory 
+Theory Theory Theory Theory Theory Theory 
+
+Tutorials
+--------------------
+Tutorials Tutorials Tutorials Tutorials
+Tutorials Tutorials Tutorials Tutorials
+
+Functions
+--------------------
+Functions Functions Functions Functions 
+Functions Functions Functions Functions 
 
 .. automodule:: pyAPEP.simsep
    :members:
