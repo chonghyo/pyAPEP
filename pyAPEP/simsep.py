@@ -22,20 +22,21 @@ Functions Functions Functions Functions
 
  * [2022/08/02] - test
  * simsep - Python module for real PSA simulation.
+"""
 
-Import packages
 
 # %% Import packages
-.. code-block:: python
-   import numpy as np
 #from numpy.lib.function_base import _parse_input_dimensions
+.. code-block:: python
+  
+   import numpy as np
    from scipy.integrate import odeint
    import matplotlib.pyplot as plt
    import time
    from scipy.interpolate import interp1d
    from scipy.integrate import solve_ivp
    
-"""
+
 # %% Global varaiebls
 R_gas = 8.3145      # 8.3145 J/mol/K
  
