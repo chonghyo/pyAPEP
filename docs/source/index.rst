@@ -25,9 +25,10 @@ As an alternative method to install pyIAST, clone the repository on `Github <htt
    :maxdepth: 3
    :caption: Contents:
    
-   Installatioon
+   installation
    modules
-   Examples
+   example
+   faqs
 
 
 
