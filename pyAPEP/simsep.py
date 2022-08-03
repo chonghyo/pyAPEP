@@ -109,7 +109,7 @@ def change_node_fn(z_raw, y_raw, N_new):
     return y_return
 
 # %% Column class
-[docs]class column:
+class column:
     """
     Class to characterize pure-component isotherm data with an analytical model.
     Data fitting is done during instantiation.
@@ -159,7 +159,7 @@ def change_node_fn(z_raw, y_raw, N_new):
         
     """
     
-[docs]    def __init__(self, L, A_cross, n_component, 
+    def __init__(self, L, A_cross, n_component, 
                  N_node = 11, E_balance = True):
         self._L = L
         self._A = A_cross
@@ -200,8 +200,7 @@ def change_node_fn(z_raw, y_raw, N_new):
         dd[-1,:] = 0
         self._dd = dd
 
- 
-[docs]    def __str__(self):
+     def __str__(self):
         str_return = '[[Current information included here]] \n'
         for kk in self._required.keys():
             str_return = str_return + '{0:16s}'.format(kk)
