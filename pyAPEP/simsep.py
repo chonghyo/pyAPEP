@@ -21,9 +21,7 @@ Functions Functions Functions Functions
 Functions Functions Functions Functions 
 
  * [2022/08/02] - test
-"""
-"""
-simsep - Python module for real PSA simulation.
+ * simsep - Python module for real PSA simulation.
 """
 
 # %% Import packages
