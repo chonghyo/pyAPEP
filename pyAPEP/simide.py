@@ -1,6 +1,6 @@
 """
 ====================================
- :mod:`pyAPEP.simide`
+Ideal PSA simulation module (:py:mod:`pyAPEP.simide`)
 ====================================
 .. moduleauthor:: jjh <hyo156@kitech.re.kr>
 .. note:: 따라하세요
