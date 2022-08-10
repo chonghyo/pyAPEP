@@ -35,21 +35,21 @@ R_gas = 8.3145      # 8.3145 J/mol/K
  
 # %% column (bed) class
 def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
-        """
-        Ergun equation
+    """
+    Ergun equation
+      
+    :param C_array: Length of column
+    :param T_array: Cross-sectional area of column
+    :param M_molar: Number of components 
+    :param mu_vis: Number of nodes
+    :param D_particle: ???
+    :param epsi_void: ???
+    :param d: ???
+    :param dd: ???
+    :param d_fo: ???
+    :param N: ???
         
-        :param C_array: Length of column
-        :param T_array: Cross-sectional area of column
-        :param M_molar: Number of components 
-        :param mu_vis: Number of nodes
-        :param D_particle: ???
-        :param epsi_void: ???
-        :param d: ???
-        :param dd: ???
-        :param d_fo: ???
-        :param N: ???
-        
-        """
+    """
     rho_g = np.zeros(N)
     for c, m in zip(C_array, M_molar):
         rho_g = rho_g + m*c
@@ -76,16 +76,16 @@ def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
     return v_return, dv_return
 
 def Ergun_test(dP,M_molar, mu_vis, D_particle,epsi_void):
-        """
-        Ergun equation test???
+    """
+    Ergun equation test???
         
-        :param dP: ???
-        :param M_molar: ???
-        :param mu_vis: ???
-        :param D_particle: ???
-        :param epsi_void: ???
+    :param dP: ???
+    :param M_molar: ???
+    :param mu_vis: ???
+    :param D_particle: ???
+    :param epsi_void: ???
 
-        """
+    """
     rho_g = 40*M_molar
     Vs_Vg = (1-epsi_void)/epsi_void
     A =1.75*rho_g/D_particle*Vs_Vg*np.ones_like(dP)
@@ -105,14 +105,14 @@ def Ergun_test(dP,M_molar, mu_vis, D_particle,epsi_void):
 
 
 def change_node_fn(z_raw, y_raw, N_new):
-        """
-        Change???
+    """
+    Change???
         
-        :param z_raw: ???
-        :param y_rar: ???
-        :param N_new: ???
-        
-        """
+    :param z_raw: ???
+    :param y_rar: ???
+    :param N_new: ???
+      
+    """
     if isinstance(y_raw,list):
         fn_list = []
         y_return = []
@@ -1089,18 +1089,18 @@ class column:
 
 def step_P_eq_alt1(column1, column2, t_max,
 n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
-        """
-        step P equation alt1???
-        
-        :param colum1: ???
-        :param colum2: ???
-        :param t_max: ???
-        :param n_sec: ???
-        :param Cv_btw: ???
-        :param valve_select: ???
-        :param CPUtime_print: ???
-        
-        """
+    """
+    step P equation alt1???
+       
+    :param colum1: ???
+    :param colum2: ???
+    :param t_max: ???
+    :param n_sec: ???
+    :param Cv_btw: ???
+    :param valve_select: ???
+    :param CPUtime_print: ???
+      
+    """
     tic = time.time() / 60 # in minute
     P_sum1 = np.mean(column1._P_init)
     P_sum2 = np.mean(column2._P_init)
@@ -2229,6 +2229,8 @@ if __name__ == '__main__':
     L = 1
     c1 = column(L,A_cros, n_component = 2,N_node = N)
     """
+    .. code-block:: python
+    
     dP = np.linspace(-100, 100)
     M_m_test  = [0.044, 0.028]      ## molar mass    (kg/mol)
     mu_test = [1.47E-5, 1.74E-5]    ## gas viscosity (Pa sec)
@@ -2238,6 +2240,7 @@ if __name__ == '__main__':
     plt.plot(dP,v_test)
     plt.grid()
     plt.show()
+    
     """
     ## Adsorbent
     isopar1 = [3.0, 1]
