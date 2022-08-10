@@ -2229,7 +2229,7 @@ if __name__ == '__main__':
     L = 1
     c1 = column(L,A_cros, n_component = 2,N_node = N)
     """
-    .. code-block:: python
+    .. code-block:: bash
     
     dP = np.linspace(-100, 100)
     M_m_test  = [0.044, 0.028]      ## molar mass    (kg/mol)
