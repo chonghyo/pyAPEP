@@ -94,4 +94,4 @@ epub_title = project
 epub_exclude_files = ['search.html']
 intersphinx_mapping = {'https://docs.python.org/': None}
 todo_include_todos = True
-autodoc_mock_imports = ['numpy', 'scipy']
+autodoc_mock_imports = ['numpy', 'scipy', 'matplotlib']
