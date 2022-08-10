@@ -48,6 +48,7 @@ def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
         :param dd: ???
         :param d_fo: ???
         :param N: ???
+        
         """
     rho_g = np.zeros(N)
     for c, m in zip(C_array, M_molar):
@@ -110,6 +111,7 @@ def change_node_fn(z_raw, y_raw, N_new):
         :param z_raw: ???
         :param y_rar: ???
         :param N_new: ???
+        
         """
     if isinstance(y_raw,list):
         fn_list = []
@@ -146,6 +148,7 @@ class column:
         :param n_component: Number of components 
         :param N_node: Number of nodes
         :param E_balance: ???
+        
         """
                        
         self._L = L
@@ -1096,6 +1099,7 @@ n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
         :param Cv_btw: ???
         :param valve_select: ???
         :param CPUtime_print: ???
+        
         """
     tic = time.time() / 60 # in minute
     P_sum1 = np.mean(column1._P_init)
@@ -1541,6 +1545,7 @@ n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
         :param Cv_btw: ???
         :param valve_select: ???
         :param CPUtime_print: ???
+        
         """
     tic = time.time() / 60 # in minute
     P_sum1 = np.mean(column1._P_init)
@@ -2223,7 +2228,7 @@ if __name__ == '__main__':
     A_cros = 0.031416
     L = 1
     c1 = column(L,A_cros, n_component = 2,N_node = N)
-    '''
+    """
     dP = np.linspace(-100, 100)
     M_m_test  = [0.044, 0.028]      ## molar mass    (kg/mol)
     mu_test = [1.47E-5, 1.74E-5]    ## gas viscosity (Pa sec)
@@ -2233,7 +2238,7 @@ if __name__ == '__main__':
     plt.plot(dP,v_test)
     plt.grid()
     plt.show()
-    '''
+    """
     ## Adsorbent
     isopar1 = [3.0, 1]
     isopar2 = [1.0, 0.5]
