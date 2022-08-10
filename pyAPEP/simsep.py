@@ -16,6 +16,18 @@ Tutorials
 Tutorials Tutorials Tutorials Tutorials
 Tutorials Tutorials Tutorials Tutorials
 
+.. code-block:: bash
+ 
+dP = np.linspace(-100, 100)
+M_m_test  = [0.044, 0.028]      ## molar mass    (kg/mol)
+mu_test = [1.47E-5, 1.74E-5]    ## gas viscosity (Pa sec)
+D_particle_dia = 0.01   # particle diameter (m)
+epsi_test = 0.4         # macroscopic void fraction (m^3/m^3)
+v_test = Ergun_test(dP,M_m_test[0],mu_test[0],D_particle_dia,epsi_test)
+plt.plot(dP,v_test)
+plt.grid()
+plt.show()
+
 Functions
 =========
 Functions Functions Functions Functions 
@@ -2229,17 +2241,7 @@ if __name__ == '__main__':
     L = 1
     c1 = column(L,A_cros, n_component = 2,N_node = N)
     """
-    .. code-block:: bash
-    
-    dP = np.linspace(-100, 100)
-    M_m_test  = [0.044, 0.028]      ## molar mass    (kg/mol)
-    mu_test = [1.47E-5, 1.74E-5]    ## gas viscosity (Pa sec)
-    D_particle_dia = 0.01   # particle diameter (m)
-    epsi_test = 0.4         # macroscopic void fraction (m^3/m^3)
-    v_test = Ergun_test(dP,M_m_test[0],mu_test[0],D_particle_dia,epsi_test)
-    plt.plot(dP,v_test)
-    plt.grid()
-    plt.show()
+
     
     """
     ## Adsorbent
