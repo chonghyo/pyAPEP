@@ -7,7 +7,7 @@ Isotherm fitting module (:py:mod:`pyAPEP.isofit`)
 
 Theory
 ======
-Theory Theory Theory Theory Theory Theory 
+Theory Theory Theory Theory Theory 
 Theory Theory Theory Theory Theory Theory 
 
 Tutorials
