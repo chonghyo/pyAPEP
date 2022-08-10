@@ -59,7 +59,6 @@ def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
     :param dd: aaaa
     :param d_fo: aaaa
     :param N: aaaa
-        
     """
     rho_g = np.zeros(N)
     for c, m in zip(C_array, M_molar):
@@ -95,7 +94,6 @@ def Ergun_test(dP,M_molar, mu_vis, D_particle,epsi_void):
     :param mu_vis: aaaa
     :param D_particle: aaaa
     :param epsi_void: aaaa
-
     """
     rho_g = 40*M_molar
     Vs_Vg = (1-epsi_void)/epsi_void
@@ -122,7 +120,6 @@ def change_node_fn(z_raw, y_raw, N_new):
     :param z_raw: aaaa
     :param y_rar: aaaa
     :param N_new: aaaa
-      
     """
     if isinstance(y_raw,list):
         fn_list = []
@@ -158,8 +155,7 @@ class column:
         :param A_cross: Cross-sectional area of column
         :param n_component: Number of components 
         :param N_node: Number of nodes
-        :param E_balance: aaaa
-        
+        :param E_balance: aaaa  
         """
                        
         self._L = L
@@ -1109,8 +1105,7 @@ n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
     :param n_sec: aaaa
     :param Cv_btw: aaaa
     :param valve_select: aaaa
-    :param CPUtime_print: aaaa
-      
+    :param CPUtime_print: aaaa   
     """
     tic = time.time() / 60 # in minute
     P_sum1 = np.mean(column1._P_init)
@@ -1556,7 +1551,6 @@ n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
         :param Cv_btw: aaaa
         :param valve_select: aaaa
         :param CPUtime_print: aaaa
-        
         """
     tic = time.time() / 60 # in minute
     P_sum1 = np.mean(column1._P_init)
