@@ -53,12 +53,12 @@ def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
     :param T_array: Cross-sectional area of column
     :param M_molar: Number of components 
     :param mu_vis: Number of nodes
-    :param D_particle: ???
-    :param epsi_void: ???
-    :param d: ???
-    :param dd: ???
-    :param d_fo: ???
-    :param N: ???
+    :param D_particle: aaaa
+    :param epsi_void: aaaa
+    :param d: aaaa
+    :param dd: aaaa
+    :param d_fo: aaaa
+    :param N: aaaa
         
     """
     rho_g = np.zeros(N)
@@ -88,13 +88,13 @@ def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
 
 def Ergun_test(dP,M_molar, mu_vis, D_particle,epsi_void):
     """
-    Ergun equation test???
+    Ergun equation test aaaa
         
-    :param dP: ???
-    :param M_molar: ???
-    :param mu_vis: ???
-    :param D_particle: ???
-    :param epsi_void: ???
+    :param dP: aaaa
+    :param M_molar: aaaa
+    :param mu_vis: aaaa
+    :param D_particle: aaaa
+    :param epsi_void: aaaa
 
     """
     rho_g = 40*M_molar
@@ -117,11 +117,11 @@ def Ergun_test(dP,M_molar, mu_vis, D_particle,epsi_void):
 
 def change_node_fn(z_raw, y_raw, N_new):
     """
-    Change???
+    Change aaaa
         
-    :param z_raw: ???
-    :param y_rar: ???
-    :param N_new: ???
+    :param z_raw: aaaa
+    :param y_rar: aaaa
+    :param N_new: aaaa
       
     """
     if isinstance(y_raw,list):
@@ -152,13 +152,13 @@ class column:
     def __init__(self, L, A_cross, n_component, 
                  N_node = 11, E_balance = True):
         """
-        Instantiation. A `Column` class is ~~
+        Instantiation. A `Column` class is aaaa
         
         :param L: Length of column
         :param A_cross: Cross-sectional area of column
         :param n_component: Number of components 
         :param N_node: Number of nodes
-        :param E_balance: ???
+        :param E_balance: aaaa
         
         """
                        
@@ -1101,15 +1101,15 @@ class column:
 def step_P_eq_alt1(column1, column2, t_max,
 n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
     """
-    step P equation alt1???
+    step P equation alt1 aaaa
        
-    :param colum1: ???
-    :param colum2: ???
-    :param t_max: ???
-    :param n_sec: ???
-    :param Cv_btw: ???
-    :param valve_select: ???
-    :param CPUtime_print: ???
+    :param colum1: aaaa
+    :param colum2: aaaa
+    :param t_max: aaaa
+    :param n_sec: aaaa
+    :param Cv_btw: aaaa
+    :param valve_select: aaaa
+    :param CPUtime_print: aaaa
       
     """
     tic = time.time() / 60 # in minute
@@ -1547,15 +1547,15 @@ n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
 def step_P_eq_alt2(column1, column2, t_max,
 n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
         """
-        step P equation alt2???
+        step P equation alt2 aaaa
         
-        :param colum1: ???
-        :param colum2: ???
-        :param t_max: ???
-        :param n_sec: ???
-        :param Cv_btw: ???
-        :param valve_select: ???
-        :param CPUtime_print: ???
+        :param colum1: aaaa
+        :param colum2: aaaa
+        :param t_max: aaaa
+        :param n_sec: aaaa
+        :param Cv_btw: aaaa
+        :param valve_select: aaaa
+        :param CPUtime_print: aaaa
         
         """
     tic = time.time() / 60 # in minute
