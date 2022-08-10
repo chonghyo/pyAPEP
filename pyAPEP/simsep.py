@@ -35,6 +35,20 @@ R_gas = 8.3145      # 8.3145 J/mol/K
  
 # %% column (bed) class
 def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
+        """
+        Ergun equation
+        
+        :param C_array: Length of column
+        :param T_array: Cross-sectional area of column
+        :param M_molar: Number of components 
+        :param mu_vis: Number of nodes
+        :param D_particle: ???
+        :param epsi_void: ???
+        :param d: ???
+        :param dd: ???
+        :param d_fo: ???
+        :param N: ???
+        """
     rho_g = np.zeros(N)
     for c, m in zip(C_array, M_molar):
         rho_g = rho_g + m*c
@@ -61,6 +75,16 @@ def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
     return v_return, dv_return
 
 def Ergun_test(dP,M_molar, mu_vis, D_particle,epsi_void):
+        """
+        Ergun equation test???
+        
+        :param dP: ???
+        :param M_molar: ???
+        :param mu_vis: ???
+        :param D_particle: ???
+        :param epsi_void: ???
+
+        """
     rho_g = 40*M_molar
     Vs_Vg = (1-epsi_void)/epsi_void
     A =1.75*rho_g/D_particle*Vs_Vg*np.ones_like(dP)
@@ -80,6 +104,13 @@ def Ergun_test(dP,M_molar, mu_vis, D_particle,epsi_void):
 
 
 def change_node_fn(z_raw, y_raw, N_new):
+        """
+        Change???
+        
+        :param z_raw: ???
+        :param y_rar: ???
+        :param N_new: ???
+        """
     if isinstance(y_raw,list):
         fn_list = []
         y_return = []
@@ -107,6 +138,16 @@ def change_node_fn(z_raw, y_raw, N_new):
 class column:
     def __init__(self, L, A_cross, n_component, 
                  N_node = 11, E_balance = True):
+        """
+        Instantiation. A `Column` class is ~~
+        
+        :param L: Length of column
+        :param A_cross: Cross-sectional area of column
+        :param n_component: Number of components 
+        :param N_node: Number of nodes
+        :param E_balance: ???
+        """
+                       
         self._L = L
         self._A = A_cross
         self._n_comp = n_component
@@ -1045,6 +1086,17 @@ class column:
 
 def step_P_eq_alt1(column1, column2, t_max,
 n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
+        """
+        step P equation alt1???
+        
+        :param colum1: ???
+        :param colum2: ???
+        :param t_max: ???
+        :param n_sec: ???
+        :param Cv_btw: ???
+        :param valve_select: ???
+        :param CPUtime_print: ???
+        """
     tic = time.time() / 60 # in minute
     P_sum1 = np.mean(column1._P_init)
     P_sum2 = np.mean(column2._P_init)
@@ -1479,6 +1531,17 @@ n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
 
 def step_P_eq_alt2(column1, column2, t_max,
 n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
+        """
+        step P equation alt2???
+        
+        :param colum1: ???
+        :param colum2: ???
+        :param t_max: ???
+        :param n_sec: ???
+        :param Cv_btw: ???
+        :param valve_select: ???
+        :param CPUtime_print: ???
+        """
     tic = time.time() / 60 # in minute
     P_sum1 = np.mean(column1._P_init)
     P_sum2 = np.mean(column2._P_init)
