@@ -6,10 +6,6 @@ Real PSA simulation module (:py:mod:`pyAPEP.simsep`)
 .. moduleauthor:: jjh <hyo156@kitech.re.kr>
 .. note:: 따라하세요
 
-Theory
-======
-Theory Theory Theory Theory Theory Theory 
-Theory Theory Theory Theory Theory Theory 
 
 Tutorials
 =========
@@ -2324,3 +2320,10 @@ if __name__ == '__main__':
     c2.Graph(10,3, loc = Legend_loc)
     plt.show( )
     
+"""
+Theory
+======
+Theory Theory Theory Theory Theory Theory 
+Theory Theory Theory Theory Theory Theory 
+
+"""
