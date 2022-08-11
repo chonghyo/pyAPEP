@@ -2320,11 +2320,14 @@ if __name__ == '__main__':
     c2.Graph(10,3, loc = Legend_loc)
     plt.show( )
     
+
 """
 ======
 Theory
 ======
+
 Theory Theory Theory Theory Theory Theory 
 Theory Theory Theory Theory Theory Theory 
+
 
 """
