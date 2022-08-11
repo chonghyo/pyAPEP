@@ -1542,17 +1542,17 @@ n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
 
 def step_P_eq_alt2(column1, column2, t_max,
 n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
-        """
-        step P equation alt2 aaaa
-        
-        :param colum1: aaaa
-        :param colum2: aaaa
-        :param t_max: aaaa
-        :param n_sec: aaaa
-        :param Cv_btw: aaaa
-        :param valve_select: aaaa
-        :param CPUtime_print: aaaa
-        """
+    """
+    step P equation alt2 aaaa
+       
+    :param colum1: aaaa
+    :param colum2: aaaa
+    :param t_max: aaaa
+    :param n_sec: aaaa
+    :param Cv_btw: aaaa
+    :param valve_select: aaaa
+    :param CPUtime_print: aaaa
+    """
     tic = time.time() / 60 # in minute
     P_sum1 = np.mean(column1._P_init)
     P_sum2 = np.mean(column2._P_init)
@@ -2235,8 +2235,6 @@ if __name__ == '__main__':
     L = 1
     c1 = column(L,A_cros, n_component = 2,N_node = N)
     """
-
-    
     """
     ## Adsorbent
     isopar1 = [3.0, 1]
