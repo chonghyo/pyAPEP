@@ -20,3 +20,7 @@ If on Windows, run the setup file from a command prompt (Start --> Accessories):
 .. code-block:: bash
 
    setup.py install
+   
+.. math::
+
+    \frac{\vartriangle P}{:math:`L`} = \frac{\vartriangle q_1 * :math:`\mu` }{:math:`d_{p}`^2 }  \frac{(1 - :math:`\epsilon` )^2}{:math:`\epsilon` ^3}
