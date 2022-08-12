@@ -23,4 +23,4 @@ If on Windows, run the setup file from a command prompt (Start --> Accessories):
    
 .. math::
 
-    \frac{\vartriangle P}{L} = \frac{180 \mu }{d_{p}^2 }  \frac{(1 - \epsilon)^2}{\epsilon^3}
+    \frac{\vartriangle P}{L} = \frac{180 \mu }{d_{p}^2 } \frac{(1 - \epsilon)^2}{\epsilon^3} + \frac{7}{4} \frac{\rho_{f}}{d_{P}} \frac{1 - \epsilon}{\epsilon^3} q^2
