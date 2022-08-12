@@ -27,30 +27,12 @@ If on Windows, run the setup file from a command prompt (Start --> Accessories):
 
 where
 
-    .. math::
-
-        \vartriangle P = Pressure drop
-
-    .. math::
-
-        L = Height of the bed
-
-    .. math::
-
-        \mu = Fluid viscosity
-
-    .. math::
-
-        \epsilon = Void space of the bed
-
-    .. math::
-
-        u = Fluid superficial velocity
-
-    .. math::
-
-        d_{P} = Particle diameter
-
-    .. math::
-
-        \rho_{f} = Density of Fluid
+    * :math:`\vartriangle P =` Pressure drop
+    * :math:`L =` Height of the bed
+    * :math:`\mu =` Fluid viscosity
+    * :math:`\epsilon =` Void space of the bed
+    * :math:`u =` Fluid superficial velocity
+    * :math:`d_{P} =` Particle diameter
+    * :math:`\rho_{f} =` Density of Fluid
+    
+hahahahahahahahahha
