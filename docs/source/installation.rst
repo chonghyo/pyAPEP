@@ -23,4 +23,4 @@ If on Windows, run the setup file from a command prompt (Start --> Accessories):
    
 .. math::
 
-    \frac{\vartriangle P}{:math:`L`} = \frac{\vartriangle q_1 * :math:`\mu` }{:math:`d_{p}`^2 }  \frac{(1 - :math:`\epsilon` )^2}{:math:`\epsilon` ^3}
+    \frac{\vartriangle P}{L} = \frac{180 \mu }{d_{p}^2 }  \frac{(1 - \epsilon)^2}{\epsilon^3}
