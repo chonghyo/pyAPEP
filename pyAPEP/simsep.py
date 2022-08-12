@@ -11,7 +11,6 @@ Tutorials
 =========
 Tutorials Tutorials Tutorials Tutorials
 Tutorials Tutorials Tutorials Tutorials
-`link text <http://dns2.asia.edu.tw/~ysho/YSHO-English/2000%20Engineering/PDF/Che%20Eng%20Pro48,%2089.pdf>`_ 
 
 Functions
 =========
@@ -45,7 +44,7 @@ R_gas = 8.3145      # 8.3145 J/mol/K
 # %% column (bed) class
 def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
     """
-    Ergun equation
+    Ergun equation `link text <http://dns2.asia.edu.tw/~ysho/YSHO-English/2000%20Engineering/PDF/Che%20Eng%20Pro48,%2089.pdf>`_ 
       
     :param C_array: Length of column
     :param T_array: Cross-sectional area of column
