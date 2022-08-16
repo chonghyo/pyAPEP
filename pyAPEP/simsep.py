@@ -1015,19 +1015,19 @@ class column:
               loc = [1,1], yaxis_label = None, 
               file_name = None, 
               figsize = [7,5], dpi = 85, y = None,):
-       """
-       Making graph
-       
-       :param every_n_sec: Number of points in graph 
-       :param index: aaaa
-       :param loc: aaaa
-       :param yaxis_label: ylabel of graph
-       :param file_name: File name
-       :param figsize: Figure size (default [7,5])
-       :param dpi: Dot per inch (default 85)       
-       :param y: aaaa
-    
-       """
+        """
+        Making graph
+        
+        :param every_n_sec: Number of points in graph 
+        :param index: aaaa
+        :param loc: aaaa
+        :param yaxis_label: ylabel of graph
+        :param file_name: File name
+        :param figsize: Figure size (default [7,5])
+        :param dpi: Dot per inch (default 85)       
+        :param y: aaaa
+     
+        """
         N = self._N
         one_sec = self._n_sec
         n_show = one_sec*every_n_sec
