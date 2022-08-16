@@ -45,18 +45,20 @@ R_gas = 8.3145      # 8.3145 J/mol/K
 # %% column (bed) class
 def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
     """
-    Ergun equation `text <http://dns2.asia.edu.tw/~ysho/YSHO-English/2000%20Engineering/PDF/Che%20Eng%20Pro48,%2089.pdf>`_ 
-      
-    :param C_array: Length of column
-    :param T_array: Cross-sectional area of column
-    :param M_molar: Number of components 
-    :param mu_vis: Number of nodes
-    :param D_particle: aaaa
-    :param epsi_void: aaaa
+    Ergun equation
+    
+    :param C_array: aaaa
+    :param T_array: Temperature (K)
+    :param M_molar: Molar mass (kg/mol)
+    :param mu_vis: Gas viscosity (Pa sec)
+    :param D_particle: Particle diameter (m)
+    :param epsi_void: Macroscopic void fraction (m^3/m^3)
     :param d: aaaa
     :param dd: aaaa
     :param d_fo: aaaa
     :param N: aaaa
+    
+    :return: Superficial velocity (m/sec)
     """
     rho_g = np.zeros(N)
     for c, m in zip(C_array, M_molar):
