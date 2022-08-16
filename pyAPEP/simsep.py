@@ -89,11 +89,11 @@ def Ergun_test(dP,M_molar, mu_vis, D_particle,epsi_void):
     """
     Ergun equation test aaaa
         
-    :param dP: aaaa
-    :param M_molar: aaaa
-    :param mu_vis: aaaa
-    :param D_particle: aaaa
-    :param epsi_void: aaaa
+    :param dP: Pressure drop
+    :param M_molar: Molar mass (kg/mol)
+    :param mu_vis: Gas viscosity (Pa sec)
+    :param D_particle: Particle diameter (m)
+    :param epsi_void: Macroscopic void fraction (m^3/m^3)
     """
     rho_g = 40*M_molar
     Vs_Vg = (1-epsi_void)/epsi_void
