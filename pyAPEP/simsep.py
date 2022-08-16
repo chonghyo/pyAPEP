@@ -11,16 +11,15 @@ Tutorials
 =========
 Tutorials Tutorials Tutorials Tutorials
 Tutorials Tutorials Tutorials Tutorials
-`text <http://dns2.asia.edu.tw/~ysho/YSHO-English/2000%20Engineering/PDF/Che%20Eng%20Pro48,%2089.pdf>`_ 
 
 Functions
 =========
 Functions Functions Functions Functions 
 Functions Functions Functions Functions 
 
- * [2022/08/02] - test
+ * [2022/08/16] - test
 """
- 
+
 #   dP = np.linspace(-100, 100)
 #   M_m_test  = [0.044, 0.028]      ## molar mass    (kg/mol)
 #   mu_test = [1.47E-5, 1.74E-5]    ## gas viscosity (Pa sec)
