@@ -114,7 +114,7 @@ def change_node_fn(z_raw, y_raw, N_new):
 # %% Column class
 class column:
     """
-    Instantiation. A `Column` class is aaaa
+    Instantiation. A `Column` class is for simulating packed bed column or pressure swing adsroption process.
 
     :param L: Length of column
     :param A_cross: Cross-sectional area of column
@@ -1099,13 +1099,13 @@ class column:
         Making graph
         
         :param every_n_sec: Number of points in graph 
-        :param index: aaaa
-        :param loc: aaaa
+        :param index: Index determining which graph is to be displayed = 0 - n_comp-1 gas concentration (mol/m^3) / n_comp - 2 n_comp - 1 solid phase uptake (mol/kg) / 2 n_comp gas phase temperature (K) / 2 n_comp + 1 solid phase temeprature 
+        :param loc: Location of legend
         :param yaxis_label: ylabel of graph
         :param file_name: File name
         :param figsize: Figure size (default [7,5])
         :param dpi: Dot per inch (default 85)       
-        :param y: aaaa
+        :param y: Gas phase mol fraction (mol/mol) [n_comp N array]
      
         """
         N = self._N
@@ -1148,16 +1148,15 @@ class column:
                 file_name = None, 
                 figsize = [7,5], dpi = 85, y = None,):
         """
-        Making graph
+        Making graph of partial pressure
         
         :param every_n_sec: Number of points in graph 
-        :param loc: aaaa
+        :param loc: Location of legend
         :param yaxis_label: ylabel of graph
         :param file_name: File name
         :param figsize: Figure size (default [7,5])
         :param dpi: Dot per inch (default 85)       
-        :param y: aaaa
-     
+        :param y: Gas phase mol fraction (mol/mol) [n_comp N array]
         """
         N = self._N
         one_sec = self._n_sec
@@ -1205,15 +1204,7 @@ class column:
 def step_P_eq_alt1(column1, column2, t_max,
 n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
     """
-    step P equation alt1 aaaa
-       
-    :param colum1: aaaa
-    :param colum2: aaaa
-    :param t_max: aaaa
-    :param n_sec: aaaa
-    :param Cv_btw: aaaa
-    :param valve_select: aaaa
-    :param CPUtime_print: aaaa   
+ 
     """
     tic = time.time() / 60 # in minute
     P_sum1 = np.mean(column1._P_init)
@@ -1650,15 +1641,7 @@ n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
 def step_P_eq_alt2(column1, column2, t_max,
 n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
     """
-    step P equation alt2 aaaa
-       
-    :param colum1: aaaa
-    :param colum2: aaaa
-    :param t_max: aaaa
-    :param n_sec: aaaa
-    :param Cv_btw: aaaa
-    :param valve_select: aaaa
-    :param CPUtime_print: aaaa
+
     """
     tic = time.time() / 60 # in minute
     P_sum1 = np.mean(column1._P_init)
@@ -1988,16 +1971,6 @@ n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
 def step_P_eq(column1, column2, t_max,
 n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
     """
-    step P equation aaaa
-       
-    :param colum1: aaaa
-    :param colum2: aaaa
-    :param t_max: aaaa
-    :param n_sec: aaaa
-    :param Cv_btw: aaaa
-    :param valve_select: aaaa
-    :param CPUtime_print: aaaa
-        
         
     """
     tic = time.time() / 60 # in minute
