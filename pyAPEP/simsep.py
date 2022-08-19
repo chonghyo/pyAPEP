@@ -300,6 +300,18 @@ class column:
     def thermal_info(self, dH_adsorption,
                      Cp_solid, Cp_gas, h_heat_transfer,
                      k_conduct = 0.0001, h_heat_ambient = 0.0, T_ambient = 298.15):
+        """
+        Thermal information
+        
+        :param dH_adsorption: Outlet pressure
+        :param Cp_solid: Inlet pressure
+        :param Cp_gas: Inlet temperature 
+        :param h_heat_transfer: Number of nodes
+        :param k_conduct: aaaa  
+        :param h_heat_ambient: aaaa
+        :param T_ambient: aaaa
+
+        """
         stack_true = 0
         n_comp = self._n_comp
         if len(dH_adsorption) != n_comp:
