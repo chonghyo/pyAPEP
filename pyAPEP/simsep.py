@@ -233,6 +233,13 @@ class column:
         
         
     def gas_prop_info(self, Mass_molar, mu_viscosity):
+        """
+        Gas property information
+        
+        :param Mass_molar: Molar mass
+        :param mu_viscosity: Viscosity
+
+        """
         stack_true = 0
         if len(Mass_molar) == self._n_comp:
             stack_true = stack_true + 1
@@ -302,6 +309,19 @@ class column:
     P_inlet,T_inlet,y_inlet, Cv_in=1E-1,Cv_out=1E-3,
       Q_inlet=None, assigned_v_option = True, 
       foward_flow_direction =  True):
+        """
+        Boundary condition information
+        
+        :param P_outlet: Outlet pressure
+        :param P_inlet: Inlet pressure
+        :param T_inlet: Inlet temperature 
+        :param y_inlet: Number of nodes
+        :param Cv_in: aaaa  
+        :param Cv_out: aaaa
+        :param Q_inlet: aaaa
+        :param assigned_v_option: aaaa
+        :param foward_flow_direction: aaaa
+        """
         self._Q_varying = False
         self._required['Flow direction'] = 'Foward'
         if foward_flow_direction == False:
@@ -367,6 +387,14 @@ class column:
 
 ## Run mass & momentum balance equations
     def run_mamo(self, t_max, n_sec = 5, CPUtime_print = False):
+        """
+        Run mass & momentum balance equations
+        
+        :param t_max: max time 
+        :param n_sec: aaa
+        :param CPUtime_print: Print CPU time
+     
+        """
         tic = time.time()/60
         t_max_int = np.int32(np.floor(t_max), )
         self._n_sec = n_sec
@@ -930,6 +958,13 @@ class column:
         self._dd = dd
 
     def Q_valve(self, draw_graph = False, y = None):
+        """
+        Q valve
+        
+        :param draw_graph: aaaa 
+        :param y: aaaa
+        
+        """
         N = self._N
         if self._required['Flow direction'] == 'Backward':
             Cv_0 = self._Cv_out
@@ -1066,7 +1101,18 @@ class column:
                 yaxis_label = 'Pressure (bar)',
                 file_name = None, 
                 figsize = [7,5], dpi = 85, y = None,):
+        """
+        Making graph
+        
+        :param every_n_sec: Number of points in graph 
+        :param loc: aaaa
+        :param yaxis_label: ylabel of graph
+        :param file_name: File name
+        :param figsize: Figure size (default [7,5])
+        :param dpi: Dot per inch (default 85)       
+        :param y: aaaa
      
+        """
         N = self._N
         one_sec = self._n_sec
         n_show = one_sec*every_n_sec
