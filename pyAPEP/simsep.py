@@ -221,7 +221,7 @@ class column:
         :param rho_s: Solid density
         :param P_test_range: Range of pressure for test
         :param T_test_range: Range of temperature for test
-
+        
         """
         p_test = []
         for ii in range(self._n_comp):
@@ -915,6 +915,11 @@ class column:
 
 ## Functions for after-run processing
     def next_init(self, change_init = True):
+        """
+        Next initalization
+        
+        :param change_init: aaaa
+        """
         N = self._N
         y_end = self._y[-1,:]
         C = []
