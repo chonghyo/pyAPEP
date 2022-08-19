@@ -43,22 +43,6 @@ R_gas = 8.3145      # 8.3145 J/mol/K
  
 # %% column (bed) class
 def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
-    """
-    Ergun equation
-    
-    :param C_array: aaaa
-    :param T_array: Temperature (K)
-    :param M_molar: Molar mass (kg/mol)
-    :param mu_vis: Gas viscosity (Pa sec)
-    :param D_particle: Particle diameter (m)
-    :param epsi_void: Macroscopic void fraction (m^3/m^3)
-    :param d: aaaa
-    :param dd: aaaa
-    :param d_fo: aaaa
-    :param N: aaaa
-    
-    :return: Superficial velocity (m/sec)
-    """
     rho_g = np.zeros(N)
     for c, m in zip(C_array, M_molar):
         rho_g = rho_g + m*c
@@ -85,15 +69,6 @@ def Ergun(C_array,T_array, M_molar, mu_vis, D_particle,epsi_void,d,dd,d_fo, N):
     return v_return, dv_return
 
 def Ergun_test(dP,M_molar, mu_vis, D_particle,epsi_void):
-    """
-    Ergun equation test aaaa
-        
-    :param dP: Pressure drop
-    :param M_molar: Molar mass (kg/mol)
-    :param mu_vis: Gas viscosity (Pa sec)
-    :param D_particle: Particle diameter (m)
-    :param epsi_void: Macroscopic void fraction (m^3/m^3)
-    """
     rho_g = 40*M_molar
     Vs_Vg = (1-epsi_void)/epsi_void
     A =1.75*rho_g/D_particle*Vs_Vg*np.ones_like(dP)
@@ -113,13 +88,6 @@ def Ergun_test(dP,M_molar, mu_vis, D_particle,epsi_void):
 
 
 def change_node_fn(z_raw, y_raw, N_new):
-    """
-    Change aaaa
-        
-    :param z_raw: aaaa
-    :param y_rar: aaaa
-    :param N_new: aaaa
-    """
     if isinstance(y_raw,list):
         fn_list = []
         y_return = []
@@ -145,17 +113,18 @@ def change_node_fn(z_raw, y_raw, N_new):
 
 # %% Column class
 class column:
+    """
+    Instantiation. A `Column` class is aaaa
+
+    :param L: Length of column
+    :param A_cross: Cross-sectional area of column
+    :param n_component: Number of components 
+    :param N_node: Number of nodes
+    :param E_balance: Energy balance inclusion (default = True)  
+    """    
     def __init__(self, L, A_cross, n_component, 
                  N_node = 11, E_balance = True):
-        """
-        Instantiation. A `Column` class is aaaa
-        
-        :param L: Length of column
-        :param A_cross: Cross-sectional area of column
-        :param n_component: Number of components 
-        :param N_node: Number of nodes
-        :param E_balance: aaaa  
-        """
+
                        
         self._L = L
         self._A = A_cross
@@ -214,7 +183,7 @@ class column:
         """
         Adsorbent information
         
-        :param iso_fn: aaaa
+        :param iso_fn: Isothem function (Type: n_comp.N array, N array [pressure, temperature])
         :param epsi: Void fraction
         :param D_particle: Particle diameter
         :param rho_s: Solid density
@@ -268,9 +237,9 @@ class column:
         """
         Mass transfer
         
-        :param k_mass_transfer: aaaa
-        :param a_specific_surf: aaaa
-        :param D_dispersion: aaaa
+        :param k_mass_transfer: mass transfer coefficient s^-1
+        :param a_specific_surf: specific surface area m^2/m^3
+        :param D_dispersion: dispersion coefficient m^2/s
 
         """
         stack_true = 0
@@ -303,13 +272,13 @@ class column:
         """
         Thermal information
         
-        :param dH_adsorption: Outlet pressure
-        :param Cp_solid: Inlet pressure
-        :param Cp_gas: Inlet temperature 
-        :param h_heat_transfer: Number of nodes
-        :param k_conduct: aaaa  
-        :param h_heat_ambient: aaaa
-        :param T_ambient: aaaa
+        :param dH_adsorption: Heat of adsorption (J/mol)
+        :param Cp_solid: Solid heat capacity (J/kg K)
+        :param Cp_gas: Gas heat capacity (J/mol K)
+        :param h_heat_transfer: Heat transfer coefficient between solid and gas (J/m^2 K s)
+        :param k_conduct: Conductivity of solid phase in axial direction (W/m K)  
+        :param h_heat_ambient: Heat transfer coefficient between ambient air and outer surface of the column (J/m^2 K s)
+        :param T_ambient: Abient temperature (K)
 
         """
         stack_true = 0
@@ -343,15 +312,15 @@ class column:
         """
         Boundary condition information
         
-        :param P_outlet: Outlet pressure
-        :param P_inlet: Inlet pressure
-        :param T_inlet: Inlet temperature 
-        :param y_inlet: Number of nodes
-        :param Cv_in: aaaa  
-        :param Cv_out: aaaa
-        :param Q_inlet: aaaa
-        :param assigned_v_option: aaaa
-        :param foward_flow_direction: aaaa
+        :param P_outlet: Outlet pressure (bar) [scalar]
+        :param P_inlet: Inlet pressure (bar) [scalar]
+        :param T_inlet: Inlet temperature (K) [scalar] 
+        :param y_inlet: Inlet composition (mol/mol) [n_comp array]
+        :param Cv_in: Valve constant of inlet side (m^3/bar s) [scalar]  
+        :param Cv_out: Valve constant of outlet side (mol/bar s) [scalar]
+        :param Q_inlet: Volumetric flow rate (m^3/s)
+        :param assigned_v_option: Assign velocity or not [Boolean]
+        :param foward_flow_direction: Flow direction, if this is 'True' then the flow direction is foward.
         """
         self._Q_varying = False
         self._required['Flow direction'] = 'Foward'
@@ -394,11 +363,11 @@ class column:
         """
         Initial condition
         
-        :param P_initial: Initial pressure 
-        :param Tg_initial: Initial gas temperature
-        :param Ts_initial: Initial solid temperature
-        :param y_initial: aaaa
-        :param q_initial: aaaa
+        :param P_initial: Initial pressure (bar) [N array]
+        :param Tg_initial: Initial gas temperature (K) [N array]
+        :param Ts_initial: Initial solid temperature (K) [N array]
+        :param y_initial: Gas phase mol fraction (mol/mol) [n_comp N array]
+        :param q_initial: Solid phase uptake (mol/kg) [n_comp N array]
 
         """
         stack_true = 0
@@ -431,8 +400,8 @@ class column:
         """
         Run mass & momentum balance equations
         
-        :param t_max: max time 
-        :param n_sec: aaa
+        :param t_max: Maximum time domain value 
+        :param n_sec: Number of time node per second
         :param CPUtime_print: Print CPU time
      
         """
@@ -559,13 +528,12 @@ class column:
 
     def run_mamoen_alt(self, t_max, n_sec = 5, CPUtime_print = False):
         """
-        Run mass & momentum & energy balance alt?? aaaa
+        Run mass & momentum balance alternative
         
-        :param t_max: max time 
-        :param n_sec: aaa
+        :param t_max: Maximum time domain value 
+        :param n_sec: Number of time node per second
         :param CPUtime_print: Print CPU time
-        
-        
+     
         """
         t_max_int = np.int32(np.floor(t_max))
         self._n_sec = n_sec
@@ -737,13 +705,12 @@ class column:
 
     def run_mamoen(self, t_max, n_sec = 5, CPUtime_print = False):
         """
-        Run mass & momentum & energy balance equations
+        Run mass & momentum & energy balance 
         
-        :param t_max: max time 
-        :param n_sec: aaa
+        :param t_max: Maximum time domain value 
+        :param n_sec: Number of time node per second
         :param CPUtime_print: Print CPU time
-        
-        
+     
         """
       
         t_max_int = np.int32(np.floor(t_max))
@@ -930,7 +897,9 @@ class column:
         """
         Next initalization
         
-        :param change_init: aaaa
+        :param change_init: Replace inital condition with previous result at final time [boolean]
+        :return: Previous result at final time (if this is 'True', initial conditions are repalced automatically)
+        
         """
         N = self._N
         y_end = self._y[-1,:]
@@ -1032,9 +1001,10 @@ class column:
         """
         Q valve
         
-        :param draw_graph: aaaa 
-        :param y: aaaa
+        :param draw_graph: Show graph [boolean] 
+        :param y: Simulation result of run_mamo and run_mamoen (if it is 'None', this value is from the simulation result automatically)
         
+        :returen: Volumetric flow rates at Z = 0 and L [time_node aaaa array]
         """
         N = self._N
         if self._required['Flow direction'] == 'Backward':
