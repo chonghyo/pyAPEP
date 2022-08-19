@@ -212,6 +212,17 @@ class column:
 
     def adsorbent_info(self, iso_fn, epsi = 0.3, D_particle = 0.01, rho_s = 1000,P_test_range=[0,10], T_test_range = [273,373]):
         T_test = np.linspace(T_test_range[0], T_test_range[1],self._N)
+        """
+        Adsorbent information
+        
+        :param iso_fn: aaaa
+        :param epsi: Void fraction
+        :param D_particle: Particle diameter
+        :param rho_s: Solid density
+        :param P_test_range: Range of pressure for test
+        :param T_test_range: Range of temperature for test
+
+        """
         p_test = []
         for ii in range(self._n_comp):
             p_tmp = P_test_range[0] + np.random.random(self._N)*(P_test_range[1] - P_test_range[0])
@@ -254,6 +265,14 @@ class column:
             self._mu = mu_viscosity
             self._required['gas_prop_info'] = True
     def mass_trans_info(self, k_mass_transfer, a_specific_surf, D_dispersion = 1E-8):
+        """
+        Mass transfer
+        
+        :param k_mass_transfer: aaaa
+        :param a_specific_surf: aaaa
+        :param D_dispersion: aaaa
+
+        """
         stack_true = 0
         if np.isscalar(D_dispersion):
             D_dispersion = D_dispersion*np.ones(self._n_comp)
@@ -360,6 +379,16 @@ class column:
             print('The inlet composition should be a list/narray with shape (2, ).')    
  
     def initialC_info(self,P_initial, Tg_initial,Ts_initial, y_initial,q_initial):
+        """
+        Initial condition
+        
+        :param P_initial: Initial pressure 
+        :param Tg_initial: Initial gas temperature
+        :param Ts_initial: Initial solid temperature
+        :param y_initial: aaaa
+        :param q_initial: aaaa
+
+        """
         stack_true = 0
         if len(P_initial) != self._N:
             print('P_initial should be of shape ({},)'.format(self._N))
@@ -517,6 +546,15 @@ class column:
 ## Run mass & momentum & energy balance equations
 
     def run_mamoen_alt(self, t_max, n_sec = 5, CPUtime_print = False):
+        """
+        Run mass & momentum & energy balance alt?? aaaa
+        
+        :param t_max: max time 
+        :param n_sec: aaa
+        :param CPUtime_print: Print CPU time
+        
+        
+        """
         t_max_int = np.int32(np.floor(t_max))
         self._n_sec = n_sec
         n_t = t_max_int*n_sec+ 1
@@ -686,6 +724,16 @@ class column:
 
 
     def run_mamoen(self, t_max, n_sec = 5, CPUtime_print = False):
+        """
+        Run mass & momentum & energy balance equations
+        
+        :param t_max: max time 
+        :param n_sec: aaa
+        :param CPUtime_print: Print CPU time
+        
+        
+        """
+      
         t_max_int = np.int32(np.floor(t_max))
         self._n_sec = n_sec
         n_t = t_max_int*n_sec+ 1
@@ -910,6 +958,12 @@ class column:
         return P_init, Tg_init, Ts_init , y_init, q_init
     
     def change_init_node(self, N_new):
+        """
+        Initial node change
+        
+        :param N_new: New number of nodes
+        
+        """
         if self._N == N_new:
             print('No change in # of node.')
             return
@@ -1012,6 +1066,11 @@ class column:
         return Q_0, Q_L
     
     def breakthrough(self, draw_graph = False):
+        """
+        Breakthrough
+       
+     
+        """
         N = self._N
         n_comp = self._n_comp
         C_end =[]
@@ -1146,6 +1205,9 @@ class column:
         return fig, ax    
     ## Copy the         
     def copy(self):
+        """
+        Copy
+        """
         import copy
         self_new = copy.deepcopy(self)
         return self_new
@@ -1938,6 +2000,19 @@ n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
 
 def step_P_eq(column1, column2, t_max,
 n_sec=5, Cv_btw=0.1, valve_select = [1,1], CPUtime_print = False):
+    """
+    step P equation aaaa
+       
+    :param colum1: aaaa
+    :param colum2: aaaa
+    :param t_max: aaaa
+    :param n_sec: aaaa
+    :param Cv_btw: aaaa
+    :param valve_select: aaaa
+    :param CPUtime_print: aaaa
+        
+        
+    """
     tic = time.time() / 60 # in minute
     P_sum1 = np.mean(column1._P_init)
     P_sum2 = np.mean(column2._P_init)
@@ -2384,12 +2459,3 @@ if __name__ == '__main__':
     
 ####
 
-"""
-
-Title
------
-
-Theory Theory Theory Theory Theory Theory 
-Theory Theory Theory Theory Theory Theory 
-
-"""
