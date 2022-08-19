@@ -211,7 +211,6 @@ class column:
  ### Before running the simulations ###
 
     def adsorbent_info(self, iso_fn, epsi = 0.3, D_particle = 0.01, rho_s = 1000,P_test_range=[0,10], T_test_range = [273,373]):
-        T_test = np.linspace(T_test_range[0], T_test_range[1],self._N)
         """
         Adsorbent information
         
@@ -223,6 +222,7 @@ class column:
         :param T_test_range: Range of temperature for test
         
         """
+        T_test = np.linspace(T_test_range[0], T_test_range[1],self._N)
         p_test = []
         for ii in range(self._n_comp):
             p_tmp = P_test_range[0] + np.random.random(self._N)*(P_test_range[1] - P_test_range[0])
