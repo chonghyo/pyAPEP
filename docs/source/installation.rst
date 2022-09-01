@@ -25,6 +25,10 @@ If on Windows, run the setup file from a command prompt (Start --> Accessories):
 
     \frac{\vartriangle P}{L} = \frac{180 \mu }{d_{p}^2 } \frac{(1 - \epsilon)^2}{\epsilon^3} u + \frac{7}{4} \frac{\rho_{f}}{d_{P}} \frac{1 - \epsilon}{\epsilon^3} u^2
 
+.. math::
+
+    \int_0^\t_{sat} t_{flue} \dot n_{inject}\, dt = (\bar q_{sat,1} -\bar q_{des,1})\rho_{s}(1-\epsilon)V
+
 where
 
     * :math:`\vartriangle P =` Pressure drop
